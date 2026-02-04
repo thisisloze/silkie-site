@@ -1,0 +1,1 @@
+@tailwind base;@tailwind components;@tailwind utilities;body{@apply bg-silkie-white text-silkie-dark font-sans;}h1,h2,h3,h4{@apply font-display;}.nav-item{@apply px-4 py-2 hover:bg-silkie-soft rounded-lg transition-colors cursor-pointer text-lg font-medium;}.mobile-menu-open{@apply fixed inset-0 bg-silkie-white z-50 flex flex-col items-center justify-center space-y-8;}
