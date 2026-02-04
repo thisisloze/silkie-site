@@ -1,4 +1,3 @@
-// Remove StrictMode to avoid double-rendering in dev if desired, but good for safety.
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'

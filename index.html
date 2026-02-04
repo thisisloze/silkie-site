@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite App</title>
-</head>
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Silkie Squad</title>
+    <style>
+      /* Fallback loader */
+      body { margin: 0; background: #fdfbf7; font-family: sans-serif; }
+      #root:empty::before {
+        content: 'Loading Fluff...';
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #d4a373;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
