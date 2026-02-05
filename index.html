@@ -230,58 +230,79 @@
 
         <!-- FluffFACTS TAB -->
         <div x-show="currentTab === 'facts'" x-transition.opacity.duration.500ms x-cloak>
-            <div class="max-w-4xl mx-auto mt-8 space-y-12">
-                <div class="text-center">
-                    <h2 class="text-5xl font-display font-bold mb-6">FluffFACTS</h2>
-                    <p class="text-xl text-slate-500">Everything you need to know about your new friends.</p>
+            <div class="max-w-4xl mx-auto mt-8 space-y-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl md:text-5xl font-display font-bold mb-4">FluffFACTS</h2>
+                    <p class="text-lg text-slate-500">Everything you need to know.</p>
                 </div>
 
                 <!-- Silkie Facts -->
-                <div class="glass p-8 rounded-[2.5rem]">
-                    <div class="flex items-center gap-4 mb-6">
-                        <span class="text-4xl bg-indigo-100 p-3 rounded-2xl">🐣</span>
-                        <h3 class="text-3xl font-bold font-display">Silkie Secrets</h3>
+                <div class="glass p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-sm">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6">
+                        <span class="text-4xl bg-indigo-100 p-3 rounded-2xl shadow-sm">🐣</span>
+                        <h3 class="text-2xl md:text-3xl font-bold font-display text-slate-900">Silkie Secrets</h3>
                     </div>
-                    <ul class="space-y-4 text-lg text-slate-700">
-                        <li class="flex gap-4">
-                            <span class="font-bold text-indigo-500">Black Skin:</span>
-                            <span>Under all that fluff, their skin, bones, and even meat are dark blue/black! (Fibromelanosis)</span>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-indigo-500">5 Toes:</span>
-                            <span>Most chickens have 4 toes. Silkies have 5 (sometimes 6!). Extra toes = extra cute.</span>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-indigo-500">Can't Fly:</span>
-                            <span>Their feathers lack "barbicels" (hooks), so they feel like fur and can't catch air. You don't need a high fence!</span>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-indigo-500">Broody Queens:</span>
-                            <span>Silkies are famous mothers. They will happily hatch eggs from other breeds, ducks, or even golf balls if you let them.</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-indigo-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-indigo-600 block text-lg mb-1">Black Skin</span>
+                                <span class="text-slate-600 leading-relaxed">Under the fluff, their skin, bones, and meat are dark blue/black (Fibromelanosis).</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-indigo-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-indigo-600 block text-lg mb-1">5 Toes</span>
+                                <span class="text-slate-600 leading-relaxed">Most chickens have 4 toes. Silkies have 5 or 6! Extra toes = extra cute.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-indigo-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-indigo-600 block text-lg mb-1">Can't Fly</span>
+                                <span class="text-slate-600 leading-relaxed">Their feathers lack hooks, so they feel like fur and can't catch air. Low fences work great.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-indigo-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-indigo-600 block text-lg mb-1">Broody Queens</span>
+                                <span class="text-slate-600 leading-relaxed">Silkies are famous mothers. They will happily hatch eggs from other breeds or ducks.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Worm Facts -->
-                <div class="glass p-8 rounded-[2.5rem] border-pink-100/50">
-                    <div class="flex items-center gap-4 mb-6">
-                        <span class="text-4xl bg-pink-100 p-3 rounded-2xl">🪱</span>
-                        <h3 class="text-3xl font-bold font-display">Worm Wisdom</h3>
+                <div class="bg-pink-50/50 p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] border border-pink-100 shadow-sm">
+                    <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mb-6">
+                        <span class="text-4xl bg-pink-100 p-3 rounded-2xl shadow-sm">🪱</span>
+                        <h3 class="text-2xl md:text-3xl font-bold font-display text-slate-900">Worm Wisdom</h3>
                     </div>
-                    <ul class="space-y-4 text-lg text-slate-700">
-                        <li class="flex gap-4">
-                            <span class="font-bold text-pink-500">Surface Dwellers:</span>
-                            <span>Red Wigglers (Eisenia fetida) live in the top 6 inches of soil. They love leaf litter and compost, unlike earthworms that dig deep.</span>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-pink-500">Voracious Eaters:</span>
-                            <span>A healthy colony can eat half its own body weight in scraps every single day.</span>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="font-bold text-pink-500">Black Gold:</span>
-                            <span>Worm castings are 5-11x richer in N-P-K (Nitrogen, Phosphorus, Potassium) than regular soil.</span>
-                        </li>
-                    </ul>
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-pink-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-pink-600 block text-lg mb-1">Surface Dwellers</span>
+                                <span class="text-slate-600 leading-relaxed">Red Wigglers live in the top 6 inches of soil and love leaf litter, unlike deep-digging earthworms.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-pink-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-pink-600 block text-lg mb-1">Voracious Eaters</span>
+                                <span class="text-slate-600 leading-relaxed">A healthy colony can eat half its own body weight in scraps every single day.</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start">
+                            <div class="w-1.5 h-1.5 mt-2.5 rounded-full bg-pink-500 shrink-0"></div>
+                            <div>
+                                <span class="font-bold text-pink-600 block text-lg mb-1">Black Gold</span>
+                                <span class="text-slate-600 leading-relaxed">Worm castings are 5-11x richer in nutrients than regular soil. Superfood for plants.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
