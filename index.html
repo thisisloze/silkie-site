@@ -66,6 +66,7 @@
                     <button @click="currentTab = 'home'" :class="currentTab === 'home' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500 hover:text-indigo-600'" class="px-5 py-2 rounded-full text-sm font-semibold transition-all">Home</button>
                     <button @click="currentTab = 'prices'" :class="currentTab === 'prices' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500 hover:text-indigo-600'" class="px-5 py-2 rounded-full text-sm font-semibold transition-all">Shop</button>
                     <button @click="currentTab = 'worms'" :class="currentTab === 'worms' ? 'bg-white shadow-sm text-pink-600' : 'text-slate-500 hover:text-pink-600'" class="px-5 py-2 rounded-full text-sm font-semibold transition-all">Worms</button>
+                    <button @click="currentTab = 'facts'" :class="currentTab === 'facts' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500 hover:text-indigo-600'" class="px-5 py-2 rounded-full text-sm font-semibold transition-all">FluffFACTS</button>
                     <button @click="currentTab = 'gallery'" :class="currentTab === 'gallery' ? 'bg-white shadow-sm text-indigo-600' : 'text-slate-500 hover:text-indigo-600'" class="px-5 py-2 rounded-full text-sm font-semibold transition-all">Gallery</button>
                 </div>
 
@@ -96,6 +97,7 @@
                 <a @click="currentTab = 'home'; mobileMenu = false" class="text-xl font-medium p-4 bg-slate-50 rounded-xl">Home</a>
                 <a @click="currentTab = 'prices'; mobileMenu = false" class="text-xl font-medium p-4 bg-slate-50 rounded-xl">Shop</a>
                 <a @click="currentTab = 'worms'; mobileMenu = false" class="text-xl font-medium p-4 bg-pink-50 text-pink-600 rounded-xl">Worms</a>
+                <a @click="currentTab = 'facts'; mobileMenu = false" class="text-xl font-medium p-4 bg-slate-50 rounded-xl">FluffFACTS</a>
                 <a @click="currentTab = 'gallery'; mobileMenu = false" class="text-xl font-medium p-4 bg-slate-50 rounded-xl">Gallery</a>
                 <a @click="currentTab = 'order'; mobileMenu = false" class="mt-4 bg-indigo-600 text-white text-center py-4 rounded-xl font-bold text-lg">Order Now</a>
             </div>
@@ -184,29 +186,96 @@
 
         <!-- WORMS TAB -->
         <div x-show="currentTab === 'worms'" x-transition.opacity.duration.500ms x-cloak>
-            <div class="max-w-5xl mx-auto mt-8 grid md:grid-cols-2 gap-12 items-center">
-                <div class="bg-pink-50 p-12 rounded-[3rem] text-center border-4 border-pink-100">
-                    <div class="text-8xl mb-6">🪱</div>
-                    <div class="text-sm font-bold text-pink-500 tracking-widest uppercase mb-4">Starter Colony</div>
-                    <div class="text-7xl font-bold text-slate-900 mb-4 font-display">$15</div>
-                    <p class="text-slate-500 mb-8">~100 Worms + Bedding</p>
-                    <button @click="currentTab = 'order'" class="w-full bg-pink-500 text-white py-4 rounded-xl font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-500/30">Order Worms</button>
-                </div>
-                <div class="space-y-8">
+            <div class="max-w-5xl mx-auto mt-8">
+                <div class="text-center mb-12">
                     <h2 class="text-5xl font-display font-bold">Red Wigglers</h2>
-                    <p class="text-xl text-slate-600 leading-relaxed">
+                    <p class="text-xl text-slate-600 mt-4 max-w-2xl mx-auto">
                         The ultimate composting companions. These little workers turn your kitchen scraps into <strong>Black Gold</strong> (castings) for your garden.
                     </p>
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-lg text-2xl">🌱</div>
-                            <div><h4 class="font-bold">Super Eaters</h4><p class="text-slate-500">Eat half their weight daily</p></div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- 1lb Option -->
+                    <div class="bg-pink-50 p-10 rounded-[3rem] text-center border-4 border-pink-100 flex flex-col justify-between">
+                        <div>
+                            <div class="text-6xl mb-6">🏋️‍♀️</div>
+                            <div class="text-sm font-bold text-pink-500 tracking-widest uppercase mb-4">Serious Composter</div>
+                            <div class="text-6xl font-bold text-slate-900 mb-4 font-display">$60</div>
+                            <p class="text-slate-600 font-bold mb-2">1 lb of Worms</p>
+                            <p class="text-slate-500 mb-8 text-sm">Approx. 1,000 worms. Instantly jumpstart a large bin or garden bed.</p>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
-                            <div class="bg-pink-100 p-3 rounded-lg text-2xl">🎣</div>
-                            <div><h4 class="font-bold">Great Bait</h4><p class="text-slate-500">Perfect for fishing too</p></div>
-                        </div>
+                        <button @click="currentTab = 'order'" class="w-full bg-pink-500 text-white py-4 rounded-xl font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-500/30">Order 1 lb</button>
                     </div>
+
+                    <!-- 1/2lb Option -->
+                    <div class="bg-white p-10 rounded-[3rem] text-center border-4 border-slate-100 flex flex-col justify-between">
+                        <div>
+                            <div class="text-6xl mb-6">🌱</div>
+                            <div class="text-sm font-bold text-slate-400 tracking-widest uppercase mb-4">Starter Colony</div>
+                            <div class="text-6xl font-bold text-slate-900 mb-4 font-display">$30</div>
+                            <p class="text-slate-600 font-bold mb-2">1/2 lb of Worms</p>
+                            <p class="text-slate-500 mb-8 text-sm">Approx. 500 worms. Perfect for a small bin or tower system.</p>
+                        </div>
+                        <button @click="currentTab = 'order'" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-black transition-colors shadow-lg">Order 1/2 lb</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FluffFACTS TAB -->
+        <div x-show="currentTab === 'facts'" x-transition.opacity.duration.500ms x-cloak>
+            <div class="max-w-4xl mx-auto mt-8 space-y-12">
+                <div class="text-center">
+                    <h2 class="text-5xl font-display font-bold mb-6">FluffFACTS</h2>
+                    <p class="text-xl text-slate-500">Everything you need to know about your new friends.</p>
+                </div>
+
+                <!-- Silkie Facts -->
+                <div class="glass p-8 rounded-[2.5rem]">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl bg-indigo-100 p-3 rounded-2xl">🐣</span>
+                        <h3 class="text-3xl font-bold font-display">Silkie Secrets</h3>
+                    </div>
+                    <ul class="space-y-4 text-lg text-slate-700">
+                        <li class="flex gap-4">
+                            <span class="font-bold text-indigo-500">Black Skin:</span>
+                            <span>Under all that fluff, their skin, bones, and even meat are dark blue/black! (Fibromelanosis)</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="font-bold text-indigo-500">5 Toes:</span>
+                            <span>Most chickens have 4 toes. Silkies have 5 (sometimes 6!). Extra toes = extra cute.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="font-bold text-indigo-500">Can't Fly:</span>
+                            <span>Their feathers lack "barbicels" (hooks), so they feel like fur and can't catch air. You don't need a high fence!</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="font-bold text-indigo-500">Broody Queens:</span>
+                            <span>Silkies are famous mothers. They will happily hatch eggs from other breeds, ducks, or even golf balls if you let them.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Worm Facts -->
+                <div class="glass p-8 rounded-[2.5rem] border-pink-100/50">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl bg-pink-100 p-3 rounded-2xl">🪱</span>
+                        <h3 class="text-3xl font-bold font-display">Worm Wisdom</h3>
+                    </div>
+                    <ul class="space-y-4 text-lg text-slate-700">
+                        <li class="flex gap-4">
+                            <span class="font-bold text-pink-500">Surface Dwellers:</span>
+                            <span>Red Wigglers (Eisenia fetida) live in the top 6 inches of soil. They love leaf litter and compost, unlike earthworms that dig deep.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="font-bold text-pink-500">Voracious Eaters:</span>
+                            <span>A healthy colony can eat half its own body weight in scraps every single day.</span>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="font-bold text-pink-500">Black Gold:</span>
+                            <span>Worm castings are 5-11x richer in N-P-K (Nitrogen, Phosphorus, Potassium) than regular soil.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
