@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silkie Squad - Print Flyer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #eef2ff 0%, #fdf2f8 50%, #f5f3ff 100%);
+            width: 8.5in;
+            height: 11in;
+            padding: 0.5in;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .poster {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 4px solid #e0e7ff;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 0.4in 0.5in;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '🐣';
+            font-size: 48px;
+            position: absolute;
+            left: 0.3in;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .header::after {
+            content: '🐣';
+            font-size: 48px;
+            position: absolute;
+            right: 0.3in;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+        
+        .content {
+            flex: 1;
+            padding: 0.4in 0.5in;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3in;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #4f46e5;
+            text-align: center;
+            margin-bottom: 0.1in;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.25in;
+        }
+        
+        .price-card {
+            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+            border-radius: 16px;
+            padding: 0.25in;
+            text-align: center;
+            border: 2px solid #ddd6fe;
+        }
+        
+        .price-card.worms {
+            background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+            border-color: #fbcfe8;
+        }
+        
+        .price-card .icon {
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+        
+        .price-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 4px;
+        }
+        
+        .price-card .price {
+            font-size: 32px;
+            font-weight: 900;
+            color: #4f46e5;
+        }
+        
+        .price-card.worms .price {
+            color: #ec4899;
+        }
+        
+        .price-card .price span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+        }
+        
+        .price-card p {
+            font-size: 11px;
+            color: #64748b;
+            margin-top: 6px;
+        }
+        
+        .info-section {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 0.25in;
+            border-left: 4px solid #4f46e5;
+        }
+        
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 0.15in;
+            margin-bottom: 0.1in;
+        }
+        
+        .info-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-row .icon {
+            font-size: 20px;
+            width: 28px;
+            text-align: center;
+        }
+        
+        .info-row .label {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 13px;
+        }
+        
+        .info-row .value {
+            color: #4f46e5;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        
+        .hatch-banner {
+            background: linear-gradient(90deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            padding: 0.15in 0.25in;
+            text-align: center;
+            border: 2px dashed #f59e0b;
+        }
+        
+        .hatch-banner h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #92400e;
+        }
+        
+        .hatch-banner p {
+            font-size: 14px;
+            color: #78350f;
+            font-weight: 600;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 0.3in;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+        }
+        
+        .feature::before {
+            content: '✓';
+            background: #22c55e;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+        }
+        
+        .footer {
+            background: #1e293b;
+            color: white;
+            padding: 0.3in 0.5in;
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 0.4in;
+            margin-bottom: 0.15in;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .contact-item .icon {
+            font-size: 18px;
+        }
+        
+        .website {
+            font-size: 24px;
+            font-weight: 900;
+            color: #818cf8;
+            letter-spacing: 1px;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #4f46e5;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="poster">
+        <!-- Header -->
+        <div class="header">
+            <h1>SILKIE SQUAD</h1>
+            <div class="tagline">Fluffiest. Chicks. Ever. 🐥 Hand-Raised Silkies & Red Wigglers</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Pricing Section -->
+            <div>
+                <h2 class="section-title">🛒 PRICING</h2>
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <div class="icon">🐣</div>
+                        <h3>Hatched Chicks</h3>
+                        <div class="price">$12<span>/ea</span></div>
+                        <p>Small batches every 21 days<br>Or by request • Purebred</p>
+                    </div>
+                    <div class="price-card">
+                        <div class="icon">🥚</div>
+                        <h3>Hatching Eggs</h3>
+                        <div class="price">$5<span>/ea</span></div>
+                        <p>Fertilized & Ready<br>High fertility rate</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hatch Timer -->
+            <div class="hatch-banner">
+                <h3>⏰ HATCHING SUMMER 2026</h3>
+                <p>Small Batches Every 21 Days — Or By Request!</p>
+            </div>
+            
+            <!-- Worms -->
+            <div class="price-card worms" style="padding: 0.2in;">
+                <div class="icon">🪱</div>
+                <h3>Red Wiggler Starter Colony</h3>
+                <div class="price">$50</div>
+                <p>Starter Colony + Bedding • The ultimate composting companions!</p>
+            </div>
+            
+            <!-- Features -->
+            <div class="features">
+                <div class="feature">100% Fluff Guarantee</div>
+                <div class="feature">Kid Approved</div>
+                <div class="feature">Family Raised</div>
+            </div>
+            
+            <!-- Why Choose Us -->
+            <div class="info-section">
+                <div class="info-row">
+                    <span class="icon">🌟</span>
+                    <span class="label">Purebred Silkies:</span>
+                    <span class="value">White, Black &amp; Buff Colors</span>
+                </div>
+                <div class="info-row">
+                    <span class="icon">👋</span>
+                    <span class="label">Hand-Handled Daily:</span>
+                    <span class="value">Friendly &amp; Socialized</span>
+                </div>
+                <div class="info-row">
+                    <span class="icon">🌱</span>
+                    <span class="label">Bonus:</span>
+                    <span class="value">Ask about our Red Wigglers for composting!</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">💬</span>
+                    <span>FB Messenger: Silkie Squad</span>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">📧</span>
+                    <span>Email Available on Request</span>
+                </div>
+            </div>
+            <div class="website">silkiesquad.com</div>
+            <div class="badge">🐣 Reserve Yours Today! 🐣</div>
+        </div>
+    </div>
+</body>
+</html>
